@@ -107,6 +107,7 @@ Rails.application.configure do
   address: Settings.smtp_config.address,
   domain: Settings.smtp_config.domain,
   port: Settings.smtp_config.port,
-  authentication: Settings.smtp_config.authentication
+  authentication: Settings.smtp_config.authentication,
+  ssl: ENV["SMTP_SSL"].present?
   }
 end
