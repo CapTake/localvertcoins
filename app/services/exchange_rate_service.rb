@@ -17,7 +17,7 @@ module ExchangeRateService extend self
     external_data = JSON.parse connection.get("/data/price?fsym=VTC&tsyms=#{currencies}").body
 
     CURRENCIES.each do |currency|
-      data[currency] = external_data[currency.upcase].to_f.round(2)
+      data[currency] = external_data[currency.upcase].to_f.round(4)
     end
 
     data['updated_at'] = Time.now
