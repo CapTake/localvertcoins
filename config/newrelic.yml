@@ -1,13 +1,13 @@
 
 common: &default_settings
   license_key: Settings.new_relic.key
-  app_name: Dashous
+  app_name: LocalVertcoins
   log_level: info
 
 
 development:
   <<: *default_settings
-  app_name: Dashous (Development)
+  app_name: LocalVertcoins (Development)
   developer_mode: true
 
 test:
@@ -16,7 +16,7 @@ test:
 
 staging:
   <<: *default_settings
-  app_name: Dashous (Staging)
+  app_name: LocalVertcoins (Staging)
 
 production:
   <<: *default_settings

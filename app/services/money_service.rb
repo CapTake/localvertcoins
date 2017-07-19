@@ -10,7 +10,7 @@ module MoneyService extend self
 
   def format_number(number)
     if number < 1000
-      '%.2f' % number
+      '%.4f' % number
     else
       number.floor
     end

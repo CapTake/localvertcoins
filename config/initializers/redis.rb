@@ -1,1 +1,1 @@
-$redis = Redis.new
+$redis = Redis.new(:host => 'localvertcoins-redis', :port => 6379)

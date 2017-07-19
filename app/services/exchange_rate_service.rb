@@ -14,7 +14,7 @@ module ExchangeRateService extend self
     data = {}
 
     currencies = CURRENCIES.map { |currency| currency.upcase }.join(',')
-    external_data = JSON.parse connection.get("/data/price?fsym=DASH&tsyms=#{currencies}").body
+    external_data = JSON.parse connection.get("/data/price?fsym=VTC&tsyms=#{currencies}").body
 
     CURRENCIES.each do |currency|
       data[currency] = external_data[currency.upcase].to_f.round(2)
