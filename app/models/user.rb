@@ -51,6 +51,10 @@ class User < ApplicationRecord
     devise_mailer.send(notification, self, *args).deliver_later
   end
 
+  def self.find_by_username(login)
+    where(["lower(username) = :value", { :value => login.downcase }]).first
+  end
+
 end
 
 # == Schema Information
