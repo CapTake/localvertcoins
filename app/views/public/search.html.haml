@@ -13,16 +13,20 @@
     - else
       = link_to 'Signup', new_user_registration_path, class: 'button primary'
       %p ( it's free )
-
 - elsif @trade_requests.blank?
-
   .empty-state
     .fa.fa-search.fa-5x
     %p You can use the search tool (above) to find people that want to trade in a specific location!
-    %p Or if you like, we can guess your location:
-    = form_tag('/', method: 'POST', class: 'search') do
-      = hidden_field_tag :detect_location, 1
-      %input.button.primary(type="submit" value="Guess my location")
+    - if @tried_detect
+      %p Guessing your location from your IP address did not succeed. You can either retry guessing, or use the search bar at the top of the screen.
+      = form_tag('/', method: 'POST', class: 'search') do
+        = hidden_field_tag :detect_location, 1
+        %input.button.primary(type="submit" value="Retry guessing")
+    - else
+      %p Or if you like, we can guess your location using your IP address:
+      = form_tag('/', method: 'POST', class: 'search') do
+        = hidden_field_tag :detect_location, 1
+        %input.button.primary(type="submit" value="Guess my location")
 
 - else
 

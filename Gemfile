@@ -9,7 +9,7 @@ gem 'rack-timeout'
 gem 'resque', '~> 1.26.0'
 gem 'resque-scheduler'
 gem 'sinatra', github: 'sinatra' # added for resque web ui
-
+gem 'maxminddb'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'

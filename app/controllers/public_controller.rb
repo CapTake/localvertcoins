@@ -2,6 +2,7 @@ class PublicController < ApplicationController
   def search
     if params[:detect_location].present?
       @query = QueryService.new(request.location).query
+      @tried_detect = true
     end
     if @query
       @trade_requests = TradeRequest.active.near(@query, 5000).limit(20).decorate
