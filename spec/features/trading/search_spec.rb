@@ -41,7 +41,7 @@ feature 'search for trade requests', js: true do
         should_see 'Search Results'
         should_see 'You can use the search tool (above) to find people that want to trade in a specific location!'
         should_see 'Or if you like, we can guess your location:'
-        should_see '1 Dash = $8.34'
+        should_see '1 VTC = $8.34'
       end
       When 'I ask dashous to guess my location' do
         click_button 'Guess my location'
@@ -98,7 +98,7 @@ feature 'search for trade requests', js: true do
           should_see 'Search Results'
           should_see 'You can use the search tool (above) to find people that want to trade in a specific location!'
           should_see 'Or if you like, we can guess your location:'
-          should_see '1 Dash = $8.34'
+          should_see '1 VTC = $8.34'
         end
         When 'I ask dashous to guess my location' do
           click_button 'Guess my location'
@@ -153,7 +153,7 @@ feature 'search for trade requests', js: true do
           should_see 'Search Results'
           should_see 'You can use the search tool (above) to find people that want to trade in a specific location!'
           should_see 'Or if you like, we can guess your location:'
-          should_see '1 Dash = $8.34'
+          should_see '1 VTC = $8.34'
         end
         When 'I ask dashous to guess my location' do
           click_button 'Guess my location'

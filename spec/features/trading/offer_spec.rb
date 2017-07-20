@@ -24,7 +24,7 @@ feature 'Make an offer', js: true, perform_enqueued: true do
   given(:currency) { 'usd' }
   given(:trade_kind) { 'sell' }
 
-  given(:sale_price_explained_message) { 'This person is selling Dash for USD at 12% above market price' }
+  given(:sale_price_explained_message) { 'This person is selling VTC for USD at 12% above market price' }
   given(:sale_price_message) { 'The current sale price is $11.20' }
 
   context 'authenticated' do
@@ -66,7 +66,7 @@ feature 'Make an offer', js: true, perform_enqueued: true do
         should_see 'Warning, Avoid Scammers:'
       end
       When 'I enter a message' do
-        fill_in :offer_message, with: 'I want all the Dash you have!'
+        fill_in :offer_message, with: 'I want all the VTC you have!'
       end
       And 'I submit the offer' do
         click_button 'Submit Offer'
@@ -87,7 +87,7 @@ feature 'Make an offer', js: true, perform_enqueued: true do
       And 'there is an pending offer' do
         expect(offer.status).to eq 'pending'
         expect(offer.trade_request_id).to eq trade_request2.id
-        expect(offer.message).to eq 'I want all the Dash you have!'
+        expect(offer.message).to eq 'I want all the VTC you have!'
       end
       When 'I navigate to my offers list page' do
         within '.nav' do
@@ -117,7 +117,7 @@ feature 'Make an offer', js: true, perform_enqueued: true do
       end
       Then 'I should see the popup with the message in it' do
         within '.popup' do
-          should_see 'I want all the Dash you have!'
+          should_see 'I want all the VTC you have!'
         end
       end
       When 'I click the close button' do
@@ -193,7 +193,7 @@ feature 'Make an offer', js: true, perform_enqueued: true do
       end
       Then 'I should see the popup with the message in it' do
         within '.popup' do
-          should_see 'I want all the Dash you have!'
+          should_see 'I want all the VTC you have!'
         end
       end
       When 'I click the close button' do
@@ -559,7 +559,7 @@ feature 'Make an offer', js: true, perform_enqueued: true do
 
     context 'buying' do
       given(:trade_kind) { 'buy' }
-      given(:sale_price_explained_message) { 'This person is buying Dash with USD at 12% below market price' }
+      given(:sale_price_explained_message) { 'This person is buying VTC with USD at 12% below market price' }
       given(:sale_price_message) { 'The current sale price is $8.80' }
 
       Steps 'I attempt to create an offer with myself' do
@@ -583,7 +583,7 @@ feature 'Make an offer', js: true, perform_enqueued: true do
 
     context 'eur currency' do
       given(:currency) { 'eur' }
-      given(:sale_price_explained_message) { 'This person is selling Dash for EUR at 12% above market price' }
+      given(:sale_price_explained_message) { 'This person is selling VTC for EUR at 12% above market price' }
       given(:sale_price_message) { 'The current sale price is €11.20' }
 
       Steps 'I attempt to create an offer with myself' do
@@ -607,7 +607,7 @@ feature 'Make an offer', js: true, perform_enqueued: true do
 
     context 'jpy currency' do
       given(:currency) { 'jpy' }
-      given(:sale_price_explained_message) { 'This person is selling Dash for JPY at 12% above market price' }
+      given(:sale_price_explained_message) { 'This person is selling VTC for JPY at 12% above market price' }
       given(:sale_price_message) { 'The current sale price is ¥1120' }
       given!(:conversion_is_higher) { stub_price(1000, 'usd' => 10) }
 
