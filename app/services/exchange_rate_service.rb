@@ -29,7 +29,7 @@ module ExchangeRateService extend self
 
   def external_data
     cache = get_cache
-    return cache if cache_valid?(cache)
+    return cache if cache.present?
     fetch_external_data
   end
 
